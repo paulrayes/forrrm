@@ -1,0 +1,31 @@
+// Toast
+// =====
+
+.Toast {
+	position: fixed;
+	left: @padding-small;
+	right: @padding-small;
+	bottom: @padding-small;
+	@media (min-width: @break-tablet) {
+		left: @padding-small*2;
+		right: auto;
+		bottom: @padding-small*2;
+	}
+	background: fade(darken(@primary-color, 15%), 82%);
+	color: lighten(@primary-color, 50%);
+	padding: @padding-small @padding-small*3/2;
+	border-radius: 3px;
+	transition: all 3s;
+	opacity: 0;
+	pointer-events: none;
+}
+.Toast-error {
+	.Toast;
+	background: #903;
+	color: #fdd;
+}
+.Toast-visible {
+	opacity: 1;
+	transition: all 0.3s;
+	pointer-events: all;
+}

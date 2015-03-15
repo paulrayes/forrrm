@@ -1,0 +1,46 @@
+// Input
+// =====
+
+.Input {
+	margin: @padding-small*2 0;
+	label {
+		display:block;
+		font-weight: bold;
+	}
+	input {
+		display: block;
+		width: 100%;
+		border: none;
+		background: none;
+		padding: @padding-small/2;
+		//border: 2px solid transparent;
+		border-bottom: 2px solid #ccc;
+		outline: none;
+		transition-duration: 0.3s;
+		transition-property: all;
+	}
+	&.focused input {
+		//border-color: #ddd;
+		border-bottom-color: @primary-color;
+		transition-duration: 0.12s;
+		transition-property: all;
+		background: #fff;
+	}
+	&.invalid input {
+		border-bottom-color: #900;
+	}
+	&.disabled label, &.disabled input {
+		color: #999;
+	}
+	&.readonly input {
+		border-bottom: none;
+	}
+	.message {
+		display:block;
+		color: #666;
+		padding: @padding-small/4 @padding-small/2;
+	}
+	&.invalid .message {
+		color: #900;
+	}
+}

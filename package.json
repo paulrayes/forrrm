@@ -1,0 +1,37 @@
+{
+  "name": "forrrm",
+  "version": "0.0.1",
+  "description": "Form components for React",
+  "author": "Paul Rayes",
+  "license": "apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/leoninepublishers/forrrm"
+  },
+  "main": "lib/index.js",
+  "browser": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npm run lint:watch",
+    "lint": "eslint lib",
+    "lint:watch": "gaze 'eslint $path' 'lib/**/*.js'"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "devDependencies": {
+    "gaze-cli": "^0.1.0",
+    "eslint": "^0.15.0"
+  },
+  "dependencies": {
+    "babelify": "^5.0.4",
+    "eventemitter3": "^0.1.6",
+    "http-slug": "^1.0.0",
+    "object-assign": "^2.0.0",
+    "promise": "^6.1.0",
+    "reactify": "^1.1.0",
+    "validate.js": "^0.5.0"
+  }
+}
