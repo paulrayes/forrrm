@@ -13,14 +13,16 @@
 		border: none;
 		background: none;
 		padding: @padding-small/2;
-		//border: 2px solid transparent;
 		border-bottom: 2px solid #ccc;
 		outline: none;
 		transition-duration: 0.3s;
 		transition-property: all;
 	}
+	input:hover {
+		border-bottom-color: @primary-color;
+		transition-duration: 0.12s;
+	}
 	&.focused input {
-		//border-color: #ddd;
 		border-bottom-color: @primary-color;
 		transition-duration: 0.12s;
 		transition-property: all;
@@ -43,4 +45,7 @@
 	&.invalid .message {
 		color: #900;
 	}
+}
+td > .Input {
+	margin: @padding-small/2 0;
 }
