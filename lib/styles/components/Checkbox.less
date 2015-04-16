@@ -1,0 +1,77 @@
+// Input
+// =====
+
+.Checkbox {
+	margin: @padding-small*2 0;
+	label {
+		display:block;
+		font-weight: bold;
+		position: relative;
+		padding-left: 24px;
+	}
+	input {
+		border: 0;
+		clip: rect(0 0 0 0);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+	}
+	.checkboxBox {
+		position: absolute;
+		left: 1px;
+		top: 4px;
+		display: inline-block;
+		height: 18px;
+		width: 18px;
+		background: none;
+		border: 2px solid #ccc;
+		outline: none;
+		transition-duration: 0.3s;
+		transition-property: all;
+	}
+	&.focused .checkboxBox, label:hover .checkboxBox {
+		border-color: @primary-color;
+		transition-duration: 0.12s;
+		transition-property: all;
+		background: #fff;
+	}
+	&.invalid .checkboxBox {
+		border-bottom-color: #900;
+	}
+	&.disabled .checkboxBox, &.disabled .checkboxBox {
+		color: #999;
+	}
+	&.readonly .checkboxBox {
+		border: none;
+	}
+	.fa {
+		display: none;
+		position: absolute;
+		color: @primary-color;
+		font-size: 20px;
+		left: 0px;
+		top: 2px;
+	}
+	label:hover .fa {
+		font-size: 26px;
+		left: -3px;
+		top: -1px;
+	}
+	&.checked .fa {
+		display: inline;
+	}
+	.message {
+		display:block;
+		color: #666;
+		padding: @padding-small/4 @padding-small/2;
+	}
+	&.invalid .message {
+		color: #900;
+	}
+}
+/*td > form:first-child .Input:first-child {
+	margin-top: @padding-small/2;
+}*/

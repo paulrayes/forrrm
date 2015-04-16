@@ -7,21 +7,6 @@
 		display:block;
 		font-weight: bold;
 	}
-	input {
-		display: block;
-		width: 100%;
-		border: none;
-		background: none;
-		padding: @padding-small/2;
-		border-bottom: 2px solid #ccc;
-		outline: none;
-		transition-duration: 0.3s;
-		transition-property: all;
-	}
-	input:hover {
-		border-bottom-color: @primary-color;
-		transition-duration: 0.12s;
-	}
 	&.focused input {
 		border-bottom-color: @primary-color;
 		transition-duration: 0.12s;
@@ -46,6 +31,49 @@
 		color: #900;
 	}
 }
+
+.InputText {
+	input {
+		display: block;
+		width: 100%;
+		border: none;
+		background: none;
+		padding: @padding-small/2;
+		border-bottom: 2px solid #ccc;
+		outline: none;
+		transition-duration: 0.3s;
+		transition-property: all;
+	}
+	input:hover {
+		border-bottom-color: @primary-color;
+		transition-duration: 0.12s;
+	}
+}
 td > form:first-child .Input:first-child {
 	margin-top: @padding-small/2;
+}
+
+.TagList {
+	.nsg-editor {
+		padding: @padding-small/2;
+		border-bottom: 2px solid #ccc;
+		transition-duration: 0.3s;
+		transition-property: all;
+		cursor: text;
+		&:hover {
+			border-bottom-color: @primary-color;
+			transition-duration: 0.12s;
+		}
+	}
+	input {
+		border: none;
+		background: none;
+		outline: none;
+	}
+	&.focused .nsg-editor {
+		border-bottom-color: @primary-color;
+		transition-duration: 0.12s;
+		transition-property: all;
+		background: #fff;
+	}
 }
