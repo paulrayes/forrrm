@@ -2,10 +2,11 @@
 // =====
 
 .Input {
-	margin: @padding-small*2 0;
+	margin: @padding-small*3 0;
 	label {
 		display:block;
 		font-weight: bold;
+		font-size: 0.82em;
 	}
 	&.focused input {
 		border-bottom-color: @primary-color;
@@ -30,6 +31,9 @@
 	&.invalid .message {
 		color: #900;
 	}
+}
+.Input:last-child {
+	margin-bottom: 0;
 }
 
 .InputText {
