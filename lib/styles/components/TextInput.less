@@ -8,19 +8,20 @@
 		font-weight: bold;
 		font-size: 0.82em;
 	}
-	&.focused input {
+	&.focused input, &.focused textarea {
 		border-bottom-color: @primary-color;
 		transition-duration: 0.12s;
-		transition-property: all;
+		transition-property: border, color, background;
 		background: #fff;
+		resize: none;
 	}
-	&.invalid input {
-		border-bottom-color: #900;
+	&.invalid input, &.invalid textarea {
+		border-bottom-color: #900 !important;
 	}
-	&.disabled label, &.disabled input {
+	&.disabled label, &.disabled input, &.disabled textarea {
 		color: #999;
 	}
-	&.readonly input {
+	&.readonly input, &.readonly textarea {
 		border-bottom: none;
 	}
 	.message {
@@ -37,7 +38,7 @@
 }
 
 .InputText {
-	input {
+	input, textarea, .hiddenDiv {
 		display: block;
 		width: 100%;
 		border: none;
@@ -46,9 +47,16 @@
 		border-bottom: 2px solid #ccc;
 		outline: none;
 		transition-duration: 0.3s;
-		transition-property: all;
+		transition-property: border, color, background;
 	}
-	input:hover {
+	.hiddenDiv {
+		position: fixed;
+		visibility: hidden;
+		min-height: 80px;
+		white-space: pre-wrap;
+		word-wrap: break-word;
+	}
+	input:hover, textarea:hover {
 		border-bottom-color: @primary-color;
 		transition-duration: 0.12s;
 	}
