@@ -8,35 +8,27 @@
     "type": "git",
     "url": "https://bitbucket.org/leoninepublishers/forrrm"
   },
-  "main": "lib/index.js",
+  "main": "build/index.js",
   "browser": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "npm run lint:watch",
+    "babel": "babel lib --out-dir build --source-maps",
+    "babel:watch": "babel lib --out-dir build --watch --source-maps",
     "lint": "eslint lib",
-    "lint:watch": "gaze 'eslint $path' 'lib/**/*.js'"
-  },
-  "browserify": {
-    "transform": [
-      "babelify",
-      "brfs"
-    ]
+    "lint:watch": "gaze \"eslint $path\" \"lib/**/*.js\"",
+    "build": "npm run babel",
+    "watch": "npm run babel:watch & npm run lint:watch"
   },
   "devDependencies": {
-    "gaze-cli": "^0.1.0",
-    "eslint": "^0.15.0"
+    "babel": "^5.8.21",
+    "babel-core": "^5.8.22",
+    "eslint": "^1.2.0",
+    "gaze-cli": "^0.2.0"
   },
   "dependencies": {
-    "babelify": "^5.0.4",
-    "brfs": "^1.4.0",
-    "eventemitter3": "^0.1.6",
     "horsey": "^2.1.2",
     "http-slug": "^1.0.0",
     "insignia": "^4.2.2",
-    "object-assign": "^2.0.0",
-    "promise": "^6.1.0",
-    "reactify": "^1.1.0",
-    "remarkable": "^1.6.0",
-    "validate.js": "^0.5.0"
+    "remarkable": "^1.6.0"
   }
 }
